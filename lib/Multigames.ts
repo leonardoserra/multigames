@@ -10,5 +10,6 @@ class Multigames {
     );
   }
 }
+//test
 
 Multigames.init();
