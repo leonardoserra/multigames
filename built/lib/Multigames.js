@@ -6,5 +6,4 @@ class Multigames {
         engine.entities.push(new Rectangle(new RectangleState(100, 100, 300, 200, 0.01)));
     }
 }
-//test
 Multigames.init();
