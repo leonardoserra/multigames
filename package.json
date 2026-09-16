@@ -1,8 +1,10 @@
 {
   "scripts": {
-    "p": "npx prettier -w ."
+    "p": "npx prettier -w .",
+    "s": "npx http-server -c-1"
   },
   "devDependencies": {
+    "http-server": "^14.1.1",
     "prettier": "^3.9.6",
     "typescript": "^7.0.2"
   }
