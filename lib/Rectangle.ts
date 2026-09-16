@@ -13,7 +13,7 @@ export class RectangleState implements State {
   w: number = 0;
   h: number = 0;
   v: number = 0;
-  constructor(x:number, y:number, w:number, h:number, v:number) {
+  constructor(x: number, y: number, w: number, h: number, v: number) {
     this.x = x;
     this.y = y;
     this.w = w;

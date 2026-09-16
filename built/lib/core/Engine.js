@@ -51,13 +51,13 @@ export default class Engine {
      * state update calculation
      */
     updateEntities() {
-        this.entities.forEach(e => e.update(this.deltatime));
+        this.entities.forEach((e) => e.update(this.deltatime));
     }
     /**
      * drawing in the current frame
      */
     drawEntities() {
-        this.entities.forEach(e => e.draw(this.gameContext));
+        this.entities.forEach((e) => e.draw(this.gameContext));
     }
     renderFrame() {
         this.clearFrame();

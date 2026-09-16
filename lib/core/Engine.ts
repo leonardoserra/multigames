@@ -50,9 +50,7 @@ export default class Engine {
     this.canvasElement.width = this.windowWidth;
     this.canvasElement.height = this.windowHeight;
 
-    this.gameContext = this.canvasElement.getContext(
-      "2d",
-    );
+    this.gameContext = this.canvasElement.getContext("2d");
 
     this.clearFrame();
   };
@@ -77,18 +75,18 @@ export default class Engine {
    * state update calculation
    */
   private updateEntities() {
-    this.entities.forEach(e => e.update(this.deltatime));
+    this.entities.forEach((e) => e.update(this.deltatime));
   }
 
   /**
    * drawing in the current frame
    */
   private drawEntities() {
-    this.entities.forEach(e => e.draw(this.gameContext));
+    this.entities.forEach((e) => e.draw(this.gameContext));
   }
 
   private renderFrame() {
     this.clearFrame();
-    this.drawFrame()
+    this.drawFrame();
   }
 }
