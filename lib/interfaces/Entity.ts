@@ -1,3 +1,5 @@
+import InputManager from "../core/InputManager.js";
+
 /**
  * Entity State
  * @argument x: position in the x axys
@@ -17,6 +19,6 @@ export interface State {
 export default interface Entity {
   style: string | CanvasGradient | CanvasPattern;
   state: State;
-  update(deltatime: number): void;
-  draw(context: CanvasRenderingContext2D | null): void;
+  update(deltatime: number, input: InputManager): void;
+  draw(context: CanvasRenderingContext2D): void;
 }

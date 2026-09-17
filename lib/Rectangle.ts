@@ -1,4 +1,6 @@
+import InputManager from "./core/InputManager.js";
 import Entity, { State } from "./interfaces/Entity.js";
+
 /**
  * Entity State
  * @argument x: position in the x axys
@@ -22,6 +24,13 @@ export class RectangleState implements State {
   }
 }
 
+enum Keys {
+  UP = "KeyW",
+  DOWN = "KeyS",
+  LEFT = "KeyA",
+  RIGHT = "KeyD",
+}
+
 export default class Rectangle implements Entity {
   state: RectangleState;
   readonly style = "blue";
@@ -30,12 +39,21 @@ export default class Rectangle implements Entity {
     this.state = s;
   }
 
-  update(deltatime: number): void {
-    this.state.x += this.state.v * deltatime;
-    this.state.y += this.state.v * deltatime;
+  private up = (pixels: number) => (this.state.y -= pixels);
+  private down = (pixels: number) => (this.state.y += pixels);
+  private left = (pixels: number) => (this.state.x -= pixels);
+  private right = (pixels: number) => (this.state.x += pixels);
+
+  public update(deltatime: number, input: InputManager): void {
+    let pixels: number = this.state.v * deltatime;
+
+    if (input.isDown(Keys.UP)) this.up(pixels);
+    if (input.isDown(Keys.DOWN)) this.down(pixels);
+    if (input.isDown(Keys.LEFT)) this.left(pixels);
+    if (input.isDown(Keys.RIGHT)) this.right(pixels);
   }
 
-  draw(context: CanvasRenderingContext2D): void {
+  public draw(context: CanvasRenderingContext2D): void {
     context.fillStyle = this.style;
     context.fillRect(this.state.x, this.state.y, this.state.w, this.state.h);
   }
