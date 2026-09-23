@@ -1,7 +1,5 @@
 export default class InputManager {
-  private state: Record<string, boolean> = {
-
-  };
+  private state: Record<string, boolean> = {};
 
   constructor() {
     // listen to released keys

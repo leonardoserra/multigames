@@ -1,7 +1,7 @@
-import Engine from "./core/Engine.js";
-import Rectangle, { RectangleState } from "./Rectangle.js";
+import Engine from "./core/engine.js";
+import Rectangle, { RectangleState } from "./rectangle.js";
 
-class Multigames {
+class Game {
   static init(): void {
     const engine: Engine = new Engine();
 
@@ -11,4 +11,4 @@ class Multigames {
   }
 }
 
-Multigames.init();
+Game.init();

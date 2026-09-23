@@ -1,5 +1,5 @@
-import Entity from "../interfaces/Entity.js";
-import InputManager from "./InputManager.js";
+import Entity from "../interfaces/entity.js";
+import InputManager from "./inputManager.js";
 
 export default class Engine {
   input: InputManager = new InputManager();
@@ -60,16 +60,10 @@ export default class Engine {
   };
 
   private clearFrame(ctx: CanvasRenderingContext2D) {
-    ctx.clearRect(
-      0,
-      0,
-      this.canvasElement.width,
-      this.canvasElement.height,
-    );
+    ctx.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
   }
 
   private drawFrame(ctx: CanvasRenderingContext2D) {
-
     this.updateEntities();
     this.drawEntities(ctx);
   }

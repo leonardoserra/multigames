@@ -1,5 +1,5 @@
-import InputManager from "./core/InputManager.js";
-import Entity, { State } from "./interfaces/Entity.js";
+import InputManager from "./core/inputManager.js";
+import Entity, { State } from "./interfaces/entity.js";
 
 /**
  * Entity State

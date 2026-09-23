@@ -1,4 +1,4 @@
-import InputManager from "../core/InputManager.js";
+import InputManager from "../core/inputManager.js";
 
 /**
  * Entity State
